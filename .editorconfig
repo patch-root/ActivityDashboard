@@ -1,0 +1,19 @@
+root = true
+
+# Default rules (applies to all unless overridden)
+[*.kt]
+indent_style = space
+indent_size = 4
+ktlint_function_naming_ignore_when_annotated_with=Composable
+
+# wasmJsMain specific overrides
+[**/wasmJsMain/**/*.kt]
+# Nothing here at this time
+
+# androidMain specific overrides (example: maybe looser naming rules)
+[**/androidMain/**/*.kt]
+# Nothing here at this time
+
+# commonMain (if you want stricter rules here)
+[**/commonMain/**/*.kt]
+# Nothing here at this time

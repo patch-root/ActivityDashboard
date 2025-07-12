@@ -1,0 +1,4 @@
+ext {
+    ktlint_version = '1.2.1'
+    compile_sdk_version = 35
+}
