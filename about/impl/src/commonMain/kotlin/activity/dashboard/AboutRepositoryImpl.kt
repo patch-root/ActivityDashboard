@@ -1,6 +1,5 @@
 package activity.dashboard
 
-import activity.dashboard.common.logging.Logger
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,7 +16,6 @@ class AboutRepositoryImpl : AboutRepository {
     override val showAbout: StateFlow<Boolean> = _showAbout.asStateFlow()
 
     override fun toggleAbout(override: Boolean?) {
-        Logger.log("kellardw")
         _showAbout.value = override ?: !_showAbout.value
     }
 }
