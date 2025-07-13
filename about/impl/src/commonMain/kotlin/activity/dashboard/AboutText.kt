@@ -22,4 +22,9 @@ object AboutText {
         """
         If you have any questions, feedback, or need support, please don’t hesitate to contact us at patchroot.dev@gmail.com. We’re committed to continuously improving the application and greatly appreciate your input.
         """.trimIndent()
+
+    val supportProject =
+        """
+        Enjoying the app? If you find it helpful and would like to support continued development, consider buying us a coffee. Your support keeps this project alive and thriving!
+        """.trimIndent()
 }

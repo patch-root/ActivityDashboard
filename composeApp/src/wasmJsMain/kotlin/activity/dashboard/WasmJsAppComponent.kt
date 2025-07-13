@@ -15,4 +15,5 @@ abstract class WasmJsAppComponent(
 ) :
     WasmJsAppComponentMerged {
     abstract val templateProviderFactory: TemplateProvider.Factory
+    abstract val aboutRepository: AboutRepository
 }

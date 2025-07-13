@@ -3,6 +3,7 @@ package activity.dashboard
 import activity.dashboard.AboutPresenter.Model
 import activity.dashboard.common.theme.ActivityDashboardTheme
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,7 +17,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.unit.dp
 import software.amazon.app.platform.inject.ContributesRenderer
 import software.amazon.app.platform.renderer.ComposeRenderer
@@ -64,7 +64,11 @@ class AboutRenderer : ComposeRenderer<Model>() {
                     body = AboutText.contact,
                 )
 
-                Spacer(modifier = Modifier.height(48.dp)) // Padding for bottom safe area
+                SectionDivider()
+
+                BuyMeACoffeeSection(model)
+
+                Spacer(modifier = Modifier.height(48.dp))
             }
         }
     }
@@ -105,6 +109,23 @@ class AboutRenderer : ComposeRenderer<Model>() {
             modifier = Modifier.padding(vertical = 8.dp),
             thickness = 1.dp,
             color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.1f),
+        )
+    }
+
+    @Composable
+    fun BuyMeACoffeeSection(model: Model) {
+        Section(
+            title = "Support the Project",
+            body = AboutText.supportProject,
+        )
+        Text(
+            text = "Buy me a coffee",
+            modifier =
+                Modifier
+                    .padding(top = 4.dp)
+                    .clickable { model.onEvent(AboutPresenter.Event.Coffee) },
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.primary,
         )
     }
 }
